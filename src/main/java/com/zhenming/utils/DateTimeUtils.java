@@ -135,6 +135,39 @@ public class DateTimeUtils {
         return LocalDateTime.parse(str, format.getFormatter()).atZone(zoneId).toInstant().toEpochMilli();
     }
 
+    public static LocalDateTime date2LocalDateTime(Date date) {
+        return date2LocalDateTime(date, DEFAULT_ZONE_ID);
+    }
+
+    public static LocalDateTime date2LocalDateTime(Date date, ZoneId zoneId) {
+        return date.toInstant().atZone(zoneId).toLocalDateTime();
+    }
+
+    public static LocalDate date2LocalDate(Date date) {
+        return date2LocalDate(date, DEFAULT_ZONE_ID);
+    }
+
+    public static LocalDate date2LocalDate(Date date, ZoneId zoneId) {
+        return date.toInstant().atZone(zoneId).toLocalDate();
+    }
+
+    public static LocalTime date2LocalTime(Date date) {
+        return date2LocalTime(date, DEFAULT_ZONE_ID);
+    }
+
+    public static LocalTime date2LocalTime(Date date, ZoneId zoneId) {
+        return date.toInstant().atZone(zoneId).toLocalTime();
+    }
+
+    public static String date2String(Date date) {
+        return date2String(date, DateTimeFormat.STANDARD_DATETIME_FORMAT);
+    }
+
+    public static String date2String(Date date, DateTimeFormat format) {
+        SimpleDateFormat sdf = new SimpleDateFormat(format.getPattern());
+        return sdf.format(date);
+    }
+
     public static long getDuration(Date start, Date end, ChronoUnit unit) {
         LocalDate startDate = start.toInstant().atZone(DEFAULT_ZONE_ID).toLocalDate();
         LocalDate endDate = end.toInstant().atZone(DEFAULT_ZONE_ID).toLocalDate();
