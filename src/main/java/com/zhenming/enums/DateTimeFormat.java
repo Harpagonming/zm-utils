@@ -6,8 +6,12 @@ public enum DateTimeFormat {
     STANDARD_DATETIME_FORMAT(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss"),
     STANDARD_TIME_FORMAT(DateTimeFormatter.ofPattern("HH:mm:ss"), "HH:mm:ss"),
     STANDARD_DATE_FORMAT(DateTimeFormatter.ofPattern("yyyy-MM-dd"), "yyyy-MM-dd"),
+    STANDARD_DATE_FORMAT_SLASH(DateTimeFormatter.ofPattern("yyyy/MM/dd"), "yyyy/MM/dd"),
+    STANDARD_DATE_FORMAT_BRIEF(DateTimeFormatter.ofPattern("yyyyMMdd"), "yyyyMMdd"),
     STANDARD_WEEK_FORMAT(DateTimeFormatter.ofPattern("YYYY-ww"), "YYYY-ww"),
-    STANDARD_MONTH_FORMAT(DateTimeFormatter.ofPattern("yyyy-MM"), "yyyy-MM");
+    STANDARD_WEEK_FORMAT_SLASH(DateTimeFormatter.ofPattern("YYYY/ww"), "YYYY-ww"),
+    STANDARD_MONTH_FORMAT(DateTimeFormatter.ofPattern("yyyy-MM"), "yyyy-MM"),
+    STANDARD_MONTH_FORMAT_SLASH(DateTimeFormatter.ofPattern("yyyy/MM"), "yyyy-MM");
 
     private DateTimeFormatter formatter;
 
